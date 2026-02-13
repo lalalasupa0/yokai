@@ -17,8 +17,8 @@ plugins {
 }
 
 if (gradle.startParameter.taskRequests.toString().contains("standard", true)) {
-    apply<CrashlyticsPlugin>()
-    apply<GoogleServicesPlugin>()
+    // apply<CrashlyticsPlugin>()
+    // apply<GoogleServicesPlugin>()
 }
 
 fun runCommand(command: String): String {
@@ -104,10 +104,13 @@ android {
             buildConfigField("boolean", "BETA", "true")
             buildConfigField("boolean", "NIGHTLY", "true")
 
-            signingConfig = signingConfigs.getByName("debug")
+            // CHANGED: Use debug keys to allow installation
+            signingConfig = signingConfigs.getByName("debug") 
             matchingFallbacks.add("release")
             versionNameSuffix = "-r${commitCount}"
-            applicationIdSuffix = ".nightlyYokai"
+            
+            // CHANGED: Unique suffix for side-by-side
+            applicationIdSuffix = ".nightlyYokai.dev" 
         }
     }
 
