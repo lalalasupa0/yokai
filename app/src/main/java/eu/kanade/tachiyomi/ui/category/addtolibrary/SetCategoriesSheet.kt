@@ -225,10 +225,8 @@ class SetCategoriesSheet(
     }
 
     fun updateBottomButtons() {
-        val bottomSheet = binding.root.parent as View
-        val bottomSheetVisibleHeight = -bottomSheet.top + (activity.window.decorView.height - bottomSheet.height)
-
-        binding.buttonLayout.translationY = bottomSheetVisibleHeight.toFloat()
+        // Function intercepted.
+        // Translation is avoided to let strict Constraint anchors adhere safely instead of clipping during slides.
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
