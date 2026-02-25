@@ -47,6 +47,7 @@ import eu.kanade.tachiyomi.util.system.isInNightMode
 import eu.kanade.tachiyomi.util.system.isLTR
 import eu.kanade.tachiyomi.util.view.resetStrokeColor
 import io.noties.markwon.Markwon
+import io.noties.markwon.SoftBreakAddsNewLinePlugin
 import yokai.i18n.MR
 import yokai.util.coil.loadManga
 import yokai.util.lang.getString
@@ -71,7 +72,7 @@ class MangaHeaderHolder(
         null
     }
 
-    private val markwon by lazy { Markwon.create(itemView.context) }
+    private val markwon by lazy { Markwon.builder(itemView.context).usePlugin(SoftBreakAddsNewLinePlugin.create()).build() }
 
     private var showReadingButton = true
     private var showMoreButton = true
