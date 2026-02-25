@@ -184,113 +184,1112 @@ class ReaderChapterSheet @JvmOverloads constructor(context: Context, attrs: Attr
         adapter = FastAdapter.with(itemAdapter)
         binding.chapterRecycler.adapter = adapter
         adapter?.onClickListener = { _, _, item, position ->
+        adapter?.onLongClickListener = { _, _, item, _ ->
             if (!sheetBehavior.isExpanded() || activity.isLoading) {
                 false
             } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                false
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            } else {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                 if (item.chapter.id != viewModel.getCurrentChapter()?.chapter?.id) {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     activity.binding.readerNav.leftChapter.isInvisible = true
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     activity.binding.readerNav.rightChapter.isInvisible = true
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     activity.isScrollingThroughPagesOrChapters = true
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
 
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     loadingPos = position
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     val itemView = (binding.chapterRecycler.findViewHolderForAdapterPosition(position) as? ReaderChapterItem.ViewHolder)?.binding
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     itemView?.bookmarkImage?.isVisible = false
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     itemView?.progress?.isVisible = true
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     activity.lifecycleScope.launch {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                         activity.loadChapter(item.chapter)
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                 }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                true
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
                 true
             }
         }
         adapter?.addEventHook(
-            object : ClickEventHook<ReaderChapterItem>() {
-                override fun onBind(viewHolder: RecyclerView.ViewHolder): View? {
-                    return if (viewHolder is ReaderChapterItem.ViewHolder) {
-                        viewHolder.binding.bookmarkButton
-                    } else {
-                        null
-                    }
-                }
-
-                override fun onClick(
-                    v: View,
-                    position: Int,
-                    fastAdapter: FastAdapter<ReaderChapterItem>,
-                    item: ReaderChapterItem,
-                ) {
-                    if (!activity.isLoading && sheetBehavior.isExpanded()) {
-                        viewModel.toggleBookmark(item.chapter)
-                        refreshList()
-                    }
-                }
-            },
-        )
-
-        backgroundTintList = ColorStateList.valueOf(
-            if (!sheetBehavior.isExpanded()) {
-                primary
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
             } else {
-                fullPrimary
-            },
-        )
-
-        binding.chapterRecycler.addOnScrollListener(
-            object : RecyclerView.OnScrollListener() {
-                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                    super.onScrollStateChanged(recyclerView, newState)
-                    if (newState == RecyclerView.SCROLL_STATE_IDLE ||
-                        newState == RecyclerView.SCROLL_STATE_SETTLING
-                    ) {
-                        sheetBehavior?.isDraggable = true
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            object : ClickEventHook<ReaderChapterItem>() {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                override fun onBind(viewHolder: RecyclerView.ViewHolder): View? {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    return if (viewHolder is ReaderChapterItem.ViewHolder) {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                        viewHolder.binding.bookmarkButton
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     } else {
-                        sheetBehavior?.isDraggable = !recyclerView.canScrollVertically(-1)
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                        null
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                     }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                 }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                override fun onClick(
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    v: View,
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    position: Int,
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    fastAdapter: FastAdapter<ReaderChapterItem>,
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    item: ReaderChapterItem,
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                ) {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    if (!activity.isLoading && sheetBehavior.isExpanded()) {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                        viewModel.toggleBookmark(item.chapter)
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                        refreshList()
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
             },
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
         )
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
 
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        backgroundTintList = ColorStateList.valueOf(
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            if (!sheetBehavior.isExpanded()) {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                primary
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            } else {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                fullPrimary
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            },
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        )
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        binding.chapterRecycler.addOnScrollListener(
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            object : RecyclerView.OnScrollListener() {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    super.onScrollStateChanged(recyclerView, newState)
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    if (newState == RecyclerView.SCROLL_STATE_IDLE ||
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                        newState == RecyclerView.SCROLL_STATE_SETTLING
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    ) {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                        sheetBehavior?.isDraggable = true
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    } else {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                        sheetBehavior?.isDraggable = !recyclerView.canScrollVertically(-1)
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                    }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            },
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        )
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
         binding.chapterRecycler.layoutManager = LinearLayoutManager(context)
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
         refreshList()
-    }
-
-    fun resetChapter() {
-        val itemView = (binding.chapterRecycler.findViewHolderForAdapterPosition(loadingPos) as? ReaderChapterItem.ViewHolder)?.binding
-        itemView?.bookmarkImage?.isVisible = true
-        itemView?.progress?.isVisible = false
-    }
-
-    fun refreshList() {
-        launchUI {
-            val chapters = viewModel.getChapters()
-
-            selectedChapterId = chapters.find { it.isCurrent }?.chapter?.id ?: -1L
-            itemAdapter.clear()
-            itemAdapter.add(chapters)
-
-            (binding.chapterRecycler.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(
-                adapter?.getPosition(viewModel.getCurrentChapter()?.chapter?.id ?: 0L) ?: 0,
-                binding.chapterRecycler.height / 2 - 30.dpToPx,
-            )
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
         }
     }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
 
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+    fun resetChapter() {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        val itemView = (binding.chapterRecycler.findViewHolderForAdapterPosition(loadingPos) as? ReaderChapterItem.ViewHolder)?.binding
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        itemView?.bookmarkImage?.isVisible = true
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        itemView?.progress?.isVisible = false
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+    }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+    fun refreshList() {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        launchUI {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            val chapters = viewModel.getChapters()
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            selectedChapterId = chapters.find { it.isCurrent }?.chapter?.id ?: -1L
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            itemAdapter.clear()
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            itemAdapter.add(chapters)
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            (binding.chapterRecycler.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                adapter?.getPosition(viewModel.getCurrentChapter()?.chapter?.id ?: 0L) ?: 0,
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+                binding.chapterRecycler.height / 2 - 30.dpToPx,
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+            )
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+        }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+    }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
+
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
     fun lerpColor(colorStart: Int, colorEnd: Int, percent: Float): Int {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
         val perc = (percent * 100).roundToInt()
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
         return Color.argb(
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
             lerpColorCalc(Color.alpha(colorStart), Color.alpha(colorEnd), perc),
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
             lerpColorCalc(Color.red(colorStart), Color.red(colorEnd), perc),
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
             lerpColorCalc(Color.green(colorStart), Color.green(colorEnd), perc),
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
             lerpColorCalc(Color.blue(colorStart), Color.blue(colorEnd), perc),
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
         )
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
     }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
 
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
     fun lerpColorCalc(colorStart: Int, colorEnd: Int, percent: Int): Int {
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
         return (
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
             min(colorStart, colorEnd) * (100 - percent) + max(
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                 colorStart,
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
                 colorEnd,
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
             ) * percent
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
             ) / 100
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
     }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
 }
+        adapter?.onLongClickListener = { _, _, item, _ ->
+            if (!sheetBehavior.isExpanded() || activity.isLoading) {
+                false
+            } else {
+                viewModel.toggleRead(item.chapter)
+                refreshList()
+                true
+            }
+        }
