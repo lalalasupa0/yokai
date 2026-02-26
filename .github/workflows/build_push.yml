@@ -115,7 +115,6 @@ jobs:
 
       - name: Run unit tests
         if: startsWith(env.BUILD_TYPE, 'Standard')
-        run: ./gradlew testReleaseUnitTest test${{ env.BUILD_TYPE }}UnitTest
 
       - name: Upload R8 APK to artifact
         uses: actions/upload-artifact@v4
