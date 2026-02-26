@@ -444,7 +444,7 @@ class ReaderViewModel(
 
     fun toggleRead(chapter: Chapter) {
         chapter.read = !chapter.read
-        val lastPageToSave = if (chapter.read) chapter.last_page_read.toLong() else 0L 
+        val lastPageToSave = if (chapter.read) chapter.last_page_read.toLong() else 0L
         viewModelScope.launchNonCancellableIO {
             updateChapter.await(
                 ChapterUpdate(
@@ -452,7 +452,7 @@ class ReaderViewModel(
                     read = chapter.read,
                     bookmark = chapter.bookmark,
                     lastPageRead = lastPageToSave,
-                    pagesLeft = if (chapter.read) 0 else chapter.pages_left.toLong()
+                    pagesLeft = if (chapter.read) 0 else chapter.pages_left.toLong(),
                 )
             )
         }

@@ -104,10 +104,11 @@ android {
             buildConfigField("boolean", "BETA", "true")
             buildConfigField("boolean", "NIGHTLY", "true")
 
+            
             signingConfig = signingConfigs.getByName("debug")
             matchingFallbacks.add("release")
             versionNameSuffix = "-r${commitCount}"
-            applicationIdSuffix = ".nightlyYokai"
+            applicationIdSuffix = ".nightlyYokai.dev"
         }
     }
 
