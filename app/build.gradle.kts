@@ -17,8 +17,8 @@ plugins {
 }
 
 if (gradle.startParameter.taskRequests.toString().contains("standard", true)) {
-    apply<CrashlyticsPlugin>()
-    apply<GoogleServicesPlugin>()
+    // apply<CrashlyticsPlugin>()
+    // apply<GoogleServicesPlugin>()
 }
 
 fun runCommand(command: String): String {
@@ -88,8 +88,8 @@ android {
         }
         getByName("release") {
             applicationIdSuffix = ".yokai"
-            isShrinkResources = true
-            isMinifyEnabled = true
+            isShrinkResources = false
+            isMinifyEnabled = false
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
         }
         create("beta") {
@@ -108,6 +108,7 @@ android {
             signingConfig = signingConfigs.getByName("debug")
             matchingFallbacks.add("release")
             versionNameSuffix = "-r${commitCount}"
+            signingConfig = signingConfigs.getByName("debug")
             applicationIdSuffix = ".nightlyYokai.dev"
         }
     }
