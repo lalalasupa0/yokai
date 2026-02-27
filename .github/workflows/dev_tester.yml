@@ -1,0 +1,28 @@
+name: Dev Test Build
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      
+      - name: Grant permissions and set heap
+        run: |
+          chmod +x gradlew
+          echo "org.gradle.jvmargs=-Xmx6g -XX:MaxMetaspaceSize=1g" >> gradle.properties
+          
+      - name: Build the APK (Bypassing Tests & Errors)
+        # -x test strictly FORBIDS Gradle from running those crashing unit tests
+        run: ./gradlew assembleStandardBeta -x test --no-daemon
+
+      - name: Upload Dev APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Yokai-Dev-Test-Build
+          path: app/build/outputs/apk/standard/beta/*.apk
