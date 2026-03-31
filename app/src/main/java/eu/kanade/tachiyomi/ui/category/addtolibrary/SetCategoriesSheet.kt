@@ -220,8 +220,8 @@ class SetCategoriesSheet(
         binding.root.post {
             binding.categoryRecyclerView.scrollToPosition(
                 max(0, itemAdapter.adapterItems.indexOf(selectedItems.firstOrNull())),
-                updateBottomButtons()
             )
+            updateBottomButtons()
         }
     }
 
